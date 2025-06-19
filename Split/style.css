@@ -1,0 +1,250 @@
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, color 0.3s;
+}
+.container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+h2, h3 {
+    color: #444;
+    margin-bottom: 10px;
+}
+section {
+    margin-bottom: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+input, select, button {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+button:hover {
+    background: #0056b3;
+}
+button:disabled {
+    background: #999;
+    cursor: not-allowed;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+#members-list li {
+    background: #e9ecef;
+    margin: 5px 0;
+    padding: 8px 12px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background: #f1f1f1;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px 5px;
+    }
+    th, td {
+        font-size: 14px;
+        padding: 6px;
+    }
+}
+
+/* Group Select & Label */
+#group-select {
+    margin-bottom: 10px;
+    width: 100%;
+}
+#current-group-name {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* PDF Section */
+#pdf-section {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+#pdf-section button {
+    width: auto;
+    margin-right: 10px;
+    margin-bottom: 8px;
+}
+#single-member-pdf {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+#single-member-select {
+    width: auto;
+    min-width: 120px;
+}
+
+/* Control Buttons Group */
+button#toggle-theme,
+button#reset-app-btn,
+button#delete-group-btn,
+button#settle-up-btn {
+    margin-top: 10px;
+    width: auto;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background: #1e1e1e;
+    color: #eaeaea;
+}
+body.dark-mode .container {
+    background: #2a2a2a;
+    box-shadow: 0 2px 10px rgba(255,255,255,0.05);
+}
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode button {
+    background: #333;
+    color: #f1f1f1;
+    border: 1px solid #555;
+}
+body.dark-mode th {
+    background: #444;
+}
+body.dark-mode td {
+    background: #2a2a2a;
+}
+body.dark-mode #pdf-section {
+    background: #333;
+}
+
+.main-layout {
+    display: flex;
+    gap: 24px;
+    width: 100%;
+    justify-content: center;
+}
+#groups-sidebar {
+    min-width: 180px;
+    background: #f1f1f1;
+    border-radius: 8px;
+    padding: 16px 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    height: fit-content;
+}
+#groups-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 12px;
+}
+#groups-list li {
+    padding: 7px 10px;
+    border-radius: 5px;
+    margin-bottom: 4px;
+    cursor: pointer;
+    background: #e9ecef;
+    transition: background 0.2s;
+}
+#groups-list li.active {
+    background: #007bff;
+    color: #fff;
+    font-weight: bold;
+}
+.main-content {
+    flex: 1;
+    min-width: 300px;
+}
+#split-options {
+    margin: 10px 0 10px 0;
+}
+#custom-split-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+.custom-split-member {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.custom-split-member input[type='number'] {
+    width: 70px;
+    padding: 5px;
+}
+@media (max-width: 800px) {
+    body {
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .container {
+        padding: 10px 2px;
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+    .main-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+    #groups-sidebar {
+        min-width: unset;
+        width: 100%;
+        margin-bottom: 16px;
+    }
+    .main-content {
+        min-width: unset;
+        width: 100%;
+    }
+}
