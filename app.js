@@ -303,6 +303,13 @@ printBtn.addEventListener('click', () => {
     win.print();
 });
 
+downloadSinglePdfBtn.addEventListener('click', () => {
+    const group = groups[currentGroupIdx];
+    const member = singleMemberSelect.value;
+    downloadPDF(group.payments, group.members, group.name, member);
+});
+
+
 printSingleBtn.addEventListener('click', () => {
     const group = groups[currentGroupIdx];
     const member = singleMemberSelect.value;
