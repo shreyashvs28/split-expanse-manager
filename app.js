@@ -351,6 +351,21 @@ function downloadPDF(payments, members, groupName, filterMember = null) {
     doc.text(`Remaining Due Payment: $${totalDue.toFixed(2)}`, 10, y);
     doc.save(`split_payment_${filterMember || 'all'}.pdf`);
 }
+// firebase-config.js (or directly in main.js)
+const firebaseConfig = {
+  apiKey: "AIzaSyAgHq3g3fyBd9ZE60E4vnmoDqG_UJTcwa4",
+  authDomain: "split-expance-manager.firebaseapp.com",
+  databaseURL: "https://split-expance-manager-default-rtdb.firebaseio.com",
+  projectId: "split-expance-manager",
+  storageBucket: "split-expance-manager.firebasestorage.app",
+  messagingSenderId: "77947769542",
+  appId: "1:77947769542:web:be1019173a368b4eddfdc7",
+  measurementId: "G-8SPJJYX1ZY"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
 
 // Initial render
 renderGroupsList();
